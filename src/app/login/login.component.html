@@ -1,0 +1,26 @@
+
+ 
+    <div class="structure jumbotron padding">
+       <h4>User SingIn</h4>
+    <form  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div >
+        <label for="UserName">UserName:</label>
+        <input type="UserName" class="form-control" id="UserName" formControlName="userName" required>
+      </div>
+      <div class="form-group">
+        <label for="Password">Password:</label>
+        <input type="Password" class="form-control" id="Password" formControlName="password" required>
+      </div>
+      <div class="row float-right">
+      <span class="col-xs-3  col-sm-3">
+      <button  class="btn btn-primary" (click)="onCancel()">Cancel</button>
+    </span>
+    <span  class="col-xs-3 col-md-1 col-sm-1"></span>
+  <span class="col-xs-3 col-sm-3" >
+      <button type="submit" class="btn btn-primary">SignIn</button>
+    </span>
+  </div>
+    </form>
+  </div>
+
+  
