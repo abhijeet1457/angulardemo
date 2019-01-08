@@ -8,24 +8,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
-
+  registerForm:FormGroup;
   constructor(private router:Router) { }
 
   ngOnInit() {
+    this.registerForm= new FormGroup(
+      {
+        Firstname:new FormControl('',Validators.required),
+        Lastname:new FormControl('',Validators.required),
+        Email:new FormControl('',Validators.required),
+        UserName:new FormControl('',Validators.required),
+        Password:new FormControl('',Validators.required),
+        ConfirmPassword:new FormControl('',Validators.required)
+      }
+    )
   }
 
-  registerForm=new FormGroup(
-    {
-      Firstname:new FormControl('',Validators.required),
-      Lastname:new FormControl('',Validators.required),
-      Email:new FormControl('',Validators.required),
-      UserName:new FormControl('',Validators.required),
-      Password:new FormControl('',Validators.required),
-      ConfirmPassword:new FormControl('',Validators.required)
-    }
-  )
 
-  
   onSubmit() {
     if(this.registerForm.valid)
     {
